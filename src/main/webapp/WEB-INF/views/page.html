@@ -52,8 +52,11 @@
 							aria-controls="search" role="tab" data-toggle="tab">Search</a></li>
 						<li role="presentation"><a href="#export"
 							aria-controls="export" role="tab" data-toggle="tab">Export</a></li>
+						<li role="spellCheck"><a href="#spellCheck"
+							aria-controls="spellCheck" role="tab" data-toggle="tab">Spell Check</a></li>
 					</ul>
 					<!-- / NAV-TABS -->
+					
 					<!-- TAB-PANES -->
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane" id="upload">Upload
@@ -68,6 +71,11 @@
 						</div>
 						<div role="tabpanel" class="tab-pane" id="export">Export in
 							what so ever ...</div>
+						<div role="tabpanel" class="tab-pane" id="spellCheck">Hier kommt ein spellCheck-view ...
+						
+						<div th:replace="fragments/spellCheck:: translation"></div>
+						
+						</div>
 					</div>
 					<!-- / TAB-PANES -->
 				</div>

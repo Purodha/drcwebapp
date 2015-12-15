@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	<div th:fragment="translation">
+		<div class="container">
+			<div class="row">
+			
+						
+			Das wird der spell check view
+			<br/>
+			
+			
+				<div class=".col-md-4 col-md-offset-1 lead text-justified text-area"
+					style="margin-right: 150px;">
+					<div style="float: left;" th:each="word : ${words}">
+						<div class="translatable"
+							th:attr="data-lang-id=${word.languageId}">
+							<div class="translation arrow_box">
+								<p>
+									<small><span class="word_info"
+										th:utext="'ID: ' + ${word.id}"></span></small><br /> <small><span
+										class="word_info"
+										th:utext="'WORD: ' + ${word.currentVersion.version}"></span></small><br />
+									<small><span class="word_info"
+										th:utext="'POS: ' + ${word.currentPos.posTag}"></span></small><br />
+									<small><span class="word_info"
+										th:utext="'INDEX: ' + ${word.index}"></span></small><br /> <small><span
+										class="word_info" id="word_lang"></span></small>
+								</p>
+								<button type="button" class="btn btn-danger btn-sm closeB">x</button>
+								<button
+									th:attr="data-id=${word.id}, data-word=${word.currentVersion.version}"
+									type="button" class="btn btn-default btn-sm translate">Übersetzen</button>
+							</div>
+							<span class="word" th:text="${word.currentVersion.version}"></span><span>&nbsp;</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title">Übersetzung</h4>
+					</div>
+					<div class="modal-body">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
